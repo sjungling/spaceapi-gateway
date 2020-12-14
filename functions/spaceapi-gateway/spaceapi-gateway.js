@@ -8,6 +8,9 @@ const handler = async function (event, context) {
     subscriptions: false,
     playground: true,
     introspection: true,
+    cacheControl: {
+      defaultMaxAge: 60 * 60,
+    },
   });
   return new Promise((resolve, reject) => {
     const cb = (err, args) => (err ? reject(err) : resolve(args));
