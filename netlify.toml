@@ -1,0 +1,11 @@
+[build]
+	functions = "dist"
+	publish = "dist"
+	# This command builds the site
+  command = "yarn build"
+
+[[redirects]]
+  from = "/"
+  to = "/.netlify/functions/spaceapi-gateway"
+  status = 200
+

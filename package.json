@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "netlify-lambda build functions/spaceapi-gateway --config ./webpack.config.js"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "encoding": "^0.1.13",
+    "netlify-lambda": "^2.0.2",
+    "webpack": "^5.10.1",
+    "webpack-cli": "^4.2.0",
+    "webpack-node-externals": "^2.5.2"
+  }
+}
