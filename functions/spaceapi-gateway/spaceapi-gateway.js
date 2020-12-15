@@ -2,7 +2,27 @@ const { ApolloServer } = require("apollo-server-lambda");
 const { ApolloGateway } = require("@apollo/gateway");
 
 const handler = async function (event, context) {
-  const gateway = new ApolloGateway();
+  let gateway;
+  /**
+   * For Local development only
+   * Webpack will strip this logic
+   */
+  if (process.env.NODE_ENV !== "production") {
+    gateway = new ApolloGateway({
+      serviceList: [
+        {
+          name: "media",
+          url: "http://localhost:8888",
+        },
+        {
+          name: "missions",
+          url: "http://localhost:3000/api/graphql",
+        },
+      ],
+    });
+  } else {
+    gateway = new ApolloGateway();
+  }
   const server = new ApolloServer({
     gateway,
     subscriptions: false,

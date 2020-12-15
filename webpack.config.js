@@ -1,5 +1,6 @@
 require("dotenv").config();
 const nodeExternals = require("webpack-node-externals");
+const webpack = require("webpack"); // to access built-in plugins
 
 module.exports = {
   externals: [nodeExternals()],
@@ -11,4 +12,11 @@ module.exports = {
     __dirname: true,
   },
   devtool: "source-map",
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(
+        process.env.NODE_ENV || "development"
+      ),
+    }),
+  ],
 };
