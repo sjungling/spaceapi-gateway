@@ -1,3 +1,4 @@
 # Local Netlify folder
 .vercel
 public/*
+api/dev-gateway.ts
