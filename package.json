@@ -5,7 +5,7 @@
   },
   "devDependencies": {
     "@apollo/gateway": "^0.21.4",
-    "apollo-server": "^2.19.0",
+    "apollo-server": "^2.25.3",
     "apollo-server-micro": "^2.19.0",
     "graphql": "^15.4.0",
     "micro-cors": "^0.1.1",
